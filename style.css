@@ -1,0 +1,152 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131313;
+}
+.container{
+    position: relative;
+}
+.container .card{
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background-color: #23728a;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.container .card::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #521313;
+    clip-path: circle(200px at 80% 85%);
+    transition: 0.5s ease-in-out;
+}
+.container .card::after{
+    content: "Rayban";
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+}
+.container .card .imgBx{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+.container .card:hover .imgBx{
+    top: 0%;
+    transform: translateY(0%);
+}
+.container .card .imgBx img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(-145deg);
+    width: 270px;
+}
+.container .card .contentBx{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+.container .card:hover .contentBx{
+    height: 210px;
+}
+.container .card .contentBx h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+.container .card .contentBx .price, .container .card .contentBx .color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.container .card .contentBx .price{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .5s;
+}
+.container .card:hover .contentBx .color{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .6s;
+}
+.container .card .contentBx .price h3, .container .card .contentBx .color h3{
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+.container .card .contentBx .price span{
+    width: 37px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111111;
+    background-color: #ffffff;
+    margin: 0 5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.container .card .contentBx .price span:hover{
+    background-color: #ee931d;
+}
+.container .card .contentBx .color span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.container .card .contentBx .color span:nth-child(2){
+    background-color: black;
+}
+.container .card .contentBx .color span:nth-child(3){
+    background-color: grey;
+}
+.container .card .contentBx a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+.container .card:hover .contentBx a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+}
